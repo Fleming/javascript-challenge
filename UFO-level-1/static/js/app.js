@@ -22,7 +22,7 @@ var populate = (dataInput) => {
 //Populate table
 populate(data);
 
-
+// filter by elements
 button.on("click", () => {
 	d3.event.preventDefault();
 	var inputDate = inputField1.property("value").trim();
