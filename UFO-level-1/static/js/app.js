@@ -17,3 +17,6 @@ var populate = (dataInput) => {
 		)
 	});
 }
+
+//Populate table
+populate(data);
