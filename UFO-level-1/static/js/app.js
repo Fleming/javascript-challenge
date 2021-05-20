@@ -33,3 +33,28 @@ button.on("click", () => {
 	console.log(filterCity)
 	var filterData = data.filter(data => data.datetime === inputDate && data.city === inputCity);
 	console.log(filterData)
+
+ // give option to filter sightings
+ tbody.html("");
+
+ let response = {
+     filterData, filterCity, filterDate
+ }
+
+ if (response.filterData.length !== 0) {
+     populate(filterData);
+ }
+     else if (response.filterData.length === 0 && ((response.filterCity.length !== 0 || response.filterDate.length !== 0))){
+         populate(filterCity) || populate(filterDate);
+ 
+     }
+     else {
+         tbody.append("tr").append("td").text("No results found! Probably abducted by aliens."); 
+     }
+})
+
+resetbtn.on("click", () => {
+ tbody.html("");
+ populate(data)
+ console.log("Table reset")
+})   
